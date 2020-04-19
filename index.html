@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+
+<html>
+    <head><title>ROBLOX Lists</title></head>
+
+    <body>
+        <div id="container">
+            <div id="title">
+                Roblox Lists
+            </div>
+
+            <div id="navigationmodule">
+                <div id="navtitle">
+                    Navigation
+                </div>
+
+                <input id="aboutbutton" type="button" value="About" onclick="aboutevent()">
+
+                <input id="visitsbutton" type="button" value="Most Visited" onclick="visitsevent()">
+
+                <input id="concurrentsbutton" type="button" value="Peak Concurrent Players" onclick="concurrentsevent()">
+
+                <input id="searchbox" type="text" value="Search Games">
+
+                <input id="searchbutton" type="button" value="Go" onclick="searchevent()">
+                
+                <div id="box"></div>
+            </div>
+
+            <div id="aboutpage">
+                <div id="abouttitle">About this document</div>
+
+                <div id="aboutparagraphs">
+                    <p>This file shows you the data and statistics of many popular Roblox games on the platform at the moment. This file includes data about the number of visits and the peak concurrents players for each game.</p>
+                    <p>This also includes a search bar for every game that has been registered in this list.</p>
+                    <p a href >Developed by <a href=https://www.roblox.com/users/60704194/profile>foodland8738</a>.</p>
+                </div>
+            </div>
+
+            <div id="visitspage">
+                <div id="visitsnames">
+                    <div id="visitsnamestitle">Games</div>
+
+                    <ol id="visitsnameslist">
+                    </ol>
+                </div>
+
+                <div id="visitsvalue">
+                    <div id="visitsvaluetitle">Visits</div>
+
+                    <ol id="visitsvaluelist">
+                    </ol>
+                </div>
+            </div>
+
+            <div id="concurrentspage">
+                <div id="concurrentsnames">
+                    <div id="concurrentsnamestitle">Games</div>
+
+                    <ol id="concurrentsnameslist">
+                    </ol>
+                </div>
+
+                <div id="concurrentsvalue">
+                    <div id="concurrentsvaluetitle">Peak Concurrent Players</div>
+
+                    <ol id="concurrentsvaluelist">
+                    </ol>
+                </div>
+
+                <div id="concurrentsdate">
+                    <div id="concurrentsdatetitle">Date Set</div>
+
+                    <ol id="concurrentsdatelist">
+                    </ol>
+                </div>
+            </div>
+
+
+
+        </div>
+        
+    </body>
+</html>
+
+<style>
+    body {
+        background-color: black;
+    }    
+    
+        #container {
+            position: relative;
+            margin: auto;
+            background-color: none;
+            width: 800px;
+        }
+
+        #title {
+            position: relative;
+            background-color: white;
+            text-align: center;
+            font-size: 30px;
+            height: 30px;
+            width: 800px;
+        }
+
+            #navigationmodule {
+                position: absolute;
+                top: 32px;
+                width: 200px;
+                height: 200px;
+                background-color: white;
+                z-index: 15;
+            }
+
+                #navtitle {
+                    position: absolute;
+                    width: 200px;
+                    font-size: 20px;
+                    height: 20px;
+                    top: 3px;
+                    left: 3px;
+                }
+
+                #aboutbutton {
+                    position: absolute;
+                    top: 30px;
+                    width: auto;
+                    font-size: 15px;
+                    height: 20px;
+                    text-align: center;
+                    left: 3px;
+                }
+
+                #visitsbutton {
+                    position: absolute;
+                    top: 55px;
+                    width: auto;
+                    font-size: 15px;
+                    height: 20px;
+                    text-align: center;
+                    left: 3px;
+                }
+
+                #concurrentsbutton {
+                    position: absolute;
+                    top: 80px;
+                    width: auto;
+                    font-size: 15px;
+                    height: 20px;
+                    text-align: center;
+                    left: 3px;
+                }
+
+                #searchbox {
+                    position: absolute;
+                    top: 105px;
+                    width: 100px;
+                    font-size: 15px;
+                    height: 15px;
+                    text-align: center;
+                    left: 3px;
+                }
+
+                #searchbutton {
+                    position: absolute;
+                    top: 105px;
+                    width: auto;
+                    font-size: 15px;
+                    height: 20px;
+                    text-align: center;
+                    left: 110px;
+                }
+
+                #box {
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 194px;
+                    height: 194px;
+                    background-color:limegreen;
+                    z-index: -1;
+                }
+
+            #aboutpage {
+                position: absolute;
+                top: 32px;
+                left: 200px;
+                width: 600px;
+                height: 600px;
+                background-color: white;
+                z-index: 1;
+            }
+                #abouttitle {
+                    position: absolute;
+                    font-size: 25px;
+                    height: 25px;
+                    width: 600px;
+                    text-align: center;
+                }
+
+                #aboutparagraphs {
+                    position: relative;
+                    font-size: 15px;
+                    top: 15px;
+                    width: 600px;
+                    height: auto;
+                }
+
+
+            #visitspage {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                top: 32px;
+                left: 200px;
+                background-color: white;
+                z-index: 0;
+            }
+                #visitsnames {
+                    position: absolute;
+                    width: 300px;
+                    height: 100%;
+                    background-color: purple;
+                }
+                    #visitsnamestitle {
+                        position: absolute;
+                        width: 300px;
+                        text-align: center;
+                        font-size: 25px;
+                        height: 25px;
+                    }
+
+                    #visitsnameslist {
+                        position: absolute;
+                        width: 300px;
+                        text-align: left;
+                        top: 30px;
+                        font-size: 11px;
+                        height: auto;
+                        list-style-type:decimal;
+                        left: 80px;
+                    }
+
+                
+                #visitsvalue {
+                    position: absolute;
+                    width: 300px;
+                    left: 300px;
+                    height: 100%;
+                    background-color: orange;
+                }
+                    #visitsvaluetitle {
+                        position: absolute;
+                        width: 300px;
+                        text-align: center;
+                        font-size: 25px;
+                        height: 25px;
+                    }
+
+                    #visitsvaluelist {
+                        position: absolute;
+                        width: 300px;
+                        text-align: left;
+                        top: 30px;
+                        font-size: 11px;
+                        height: auto;
+                        list-style-type: none;
+                        text-align: center;
+                        padding: 0px; 
+                    }
+
+            
+            #concurrentspage {
+                position: absolute;
+                width: 600px;
+                height: 600px;
+                top: 32px;
+                left: 200px;
+                background-color: white;
+                z-index: 0;
+            }
+                #concurrentsnames {
+                    position: absolute;
+                    width: 200px;
+                    height: 100%;
+                    background-color:blue;
+                }
+                    #concurrentsnamestitle {
+                        position: absolute;
+                        width: 200px;
+                        text-align: center;
+                        font-size: 25px;
+                        height: 25px;
+                    }
+
+                    #concurrentsnameslist {
+                        position: absolute;
+                        width: 200px;
+                        text-align: left;
+                        top: 30px;
+                        font-size: 11px;
+                        height: auto;
+                        list-style-type:decimal;
+                        left: 30px;
+                    }
+
+                
+                #concurrentsvalue {
+                    position: absolute;
+                    width: 200px;
+                    left: 200px;
+                    height: 100%;
+                    background-color:hotpink;
+                }
+                    #concurrentsvaluetitle {
+                        position: absolute;
+                        width: 200px;
+                        text-align: center;
+                        font-size: 20px;
+                        height: 20px;
+                    }
+
+                    #concurrentsvaluelist {
+                        position: absolute;
+                        width: 200px;
+                        text-align: left;
+                        top: 30px;
+                        font-size: 11px;
+                        height: auto;
+                        list-style-type: none;
+                        text-align: center;
+                        padding: 0px; 
+                    }
+
+                #concurrentsdate {
+                    position: absolute;
+                    width: 200px;
+                    left: 400px;
+                    height: 100%;
+                    background-color: green;
+                }
+                    #concurrentsdatetitle {
+                        position: absolute;
+                        width: 200px;
+                        text-align: center;
+                        font-size: 25px;
+                        height: 25px;
+                    }
+
+                    #concurrentsdatelist {
+                        position: absolute;
+                        width: 200px;
+                        text-align: left;
+                        top: 30px;
+                        font-size: 11px;
+                        height: auto;
+                        list-style-type: none;
+                        text-align: center;
+                        padding: 0px; 
+                    }
+
+
+</style>
+
+<script>
+    var games = [["Welcome to Bloxburg",150,"14/04/2020",1900,["Welcome to Bloxburg is a very popular house roleplay game where players go to work, get promoted, pay their bills and build the house of their dream.","It is currently the most popular paid game on the entire site with a staggering 2 billion visits despite it costing 25 robux."]],
+                ["Adopt Me",1600,"12/04/2020",5700,["Adopt Me is an extremely popular breakout roleplay game where you adopt orphans or become one yourself, seemingly to create a happy family roleplay.","This game had followed the 2016 trend of roleplay/paradise games and exceeded far beyond, amassing many records as well as skyrocketing to over 5.7 billion visits in a matter of 3 years.","Adopt Me also also was the start of the development of games targeted towards the kids genre, with the help of Meepcity as well as Royale High, both being titans in the kid genre as well as the entire platform."]],
+                ["Jailbreak",240,"15/01/2019",3500,["Jailbreak is a popular prison/criminal based game where you escape the prison and wreak havoc around town, such as robbing banks and other such.","Like Adopt Me, it was created a little earlier before the other and had copied the most popular game at the time, Prison Life, and adding its own features to it.","Jailbreak was the start of what now is a ruined games page as its popularity had encouraged many other developers to use the same heavy monetisation tactics, which is now what appears on the front page, however it isn't the largest culprit of this scheme."]],
+                ["Royale High",180,"14/04/2020",3200,["Royale High is the first game to appeal to a very non-competetive genre which is the princess roleplay genre. With its development and correct marketing it had become popular very quickly, just as Jailbreak and Adopt Me have.","After overtaking many old and dying popular games from the 2016 and older era, Royale High skyrocketed into the billions, now standing in the top 5 of most visited games of all time.","One unfortunate event that has scarred the community and Roblox entirely is the passing of a digital artist for the game, Lizzy_Winkle (her online username) at age only 15, after a long battle with blood cancer. As tribute, Roblox and another known creator, Beeism, worked with Make a Wish foundation to create the item Lizzy's Wings for the Bloxy awards in respect for Lizzy."]],
+                ["Piggy",180,"15/04/2020",995,[]],
+                ["Murder Mystery 2",31,"15/04/2020",2500,[]],
+                ["Arsenal",26,"14/04/2020",741,[]],
+                ["Bee Swarm Simulator",24,"15/04/2020",846,[]],
+                ["Tower of Hell",26,"15/04/2020",1400,[]],
+                ["Bubble Gum Simulator",14,"15/04/2020",712,[]],
+                ["Phantom Forces",6,"15/04/2020",847,[]],
+                ["Build A Boat For Treasure",25,"15/04/2020",666,[]],
+                ["Prison Life",35,"36/6/2016",1400,[]],
+                ["Work at a Pizza Place",41,"14/04/2020",2200,[]]
+                ];
+
+    var failures = 0;
+    var completed = 0;
+    var order = [];
+    var order2 = [];
+    for (z = 0; completed < games.length; z++) {
+    for (i = 0; i < games.length; i++) {
+        failures = 0;
+        var names = games[i][0];
+        var visits = games[i][3];
+        for (x = 0; x < games.length; x++) {
+            if (i != x) {
+                var visits2 = games[x][3];
+                if (visits < visits2) {
+                    failures = failures + 1;
+                }else { if(visits == visits2) {
+                    games[i][3] = games[i][3] + 1;
+                }}
+            }   
+        }
+        if (failures == completed) {
+            completed = completed + 1;
+            order.push(names);
+            if (visits >= 1000) {
+                visits = (visits/1000)+"B"
+            } else {
+                    visits = visits+"M"
+            }
+            order2.push(visits);
+        }
+    }
+    }
+    for (r=0; r < games.length; r++) {
+    var node = document.createElement("LI");
+    var node2 = document.createElement("LI");
+    var textnode = document.createTextNode(order[r]);
+    var textnode2 = document.createTextNode(order2[r]);
+    node.appendChild(textnode);
+    node2.appendChild(textnode2);
+    document.getElementById("visitsnameslist").appendChild(node);
+    document.getElementById("visitsvaluelist").appendChild(node2);  
+}
+
+
+
+    var failures = 0;
+    var completed = 0;
+    var order = [];
+    var order2 = [];
+    var order3 = [];
+    for (z = 0; completed < games.length; z++) {
+    for (i = 0; i < games.length; i++) {
+        var names = games[i][0];
+        var visits = games[i][1];
+        var dateset = games[i][2];
+        failures = 0;
+        for (x = 0; x < games.length; x++) {
+            if (i != x) {
+                var visits2 = games[x][1];
+                if (visits < visits2) {
+                    failures = failures + 1;
+                }else { if(visits == visits2) {
+                    games[i][1] = games[i][1] + 1;
+                }}
+            }   
+        }
+        if (failures == completed) {
+            completed = completed + 1;
+            order.push(names);
+            if (visits >= 1000) {
+                visits = (visits/1000)+"M"
+            } else {
+                    visits = visits+"k"
+            }
+            order2.push(visits);
+            order3.push(dateset);
+        }
+    }
+    }
+    for (r=0; r < games.length; r++) {
+    var node = document.createElement("LI");
+    var node2 = document.createElement("LI");
+    var node3 = document.createElement("LI");
+    var textnode = document.createTextNode(order[r]);
+    var textnode2 = document.createTextNode(order2[r]);
+    var textnode3 = document.createTextNode(order3[r]);
+    node.appendChild(textnode);
+    node2.appendChild(textnode2);
+    node3.appendChild(textnode3);
+    document.getElementById("concurrentsnameslist").appendChild(node);
+    document.getElementById("concurrentsvaluelist").appendChild(node2);
+    document.getElementById("concurrentsdatelist").appendChild(node3);
+    }
+
+
+    function aboutevent() {
+        document.getElementById("aboutpage").style.zIndex = 1;
+        document.getElementById("visitspage").style.zIndex = 0;
+        document.getElementById("concurrentspage").style.zIndex = 0;
+    }
+
+    function visitsevent() {
+        document.getElementById("aboutpage").style.zIndex = 0;
+        document.getElementById("visitspage").style.zIndex = 1;
+        document.getElementById("concurrentspage").style.zIndex = 0;
+    }
+
+    function concurrentsevent() {
+        document.getElementById("aboutpage").style.zIndex = 0;
+        document.getElementById("visitspage").style.zIndex = 0;
+        document.getElementById("concurrentspage").style.zIndex = 1;
+    }
+
+    function searchevent() {
+        var found = false
+        var idnumber;
+        var thetext = document.getElementById("searchbox").value;
+        for (i=0; i<games.length;i++) {
+            var names = games[i][0];
+            if (names == thetext) {
+                found = true;
+                idnumber = i;
+            }
+        }
+
+        if (found == true) {
+            document.getElementById("aboutpage").style.zIndex = 0;
+            document.getElementById("visitspage").style.zIndex = 0;
+            document.getElementById("concurrentspage").style.zIndex = 0;
+
+
+            var canvas = document.createElement("DIV");
+            canvas.style.width = "600px"; canvas.style.height = "600px"; canvas.style.backgroundColor = "white"; canvas.style.zIndex = 0.5;
+            canvas.style.position = "absolute"; canvas.style.top = "32px"; canvas.style.left = "200px";
+            document.getElementById("container").appendChild(canvas); 
+
+            var tablee = games[idnumber]
+
+            var name = document.createElement("DIV"); name.style.position = "absolute"; name.style.width = "400px"; name.style.textAlign = "center";
+            name.style.fontSize = "25px"; name.style.height = "25px"; name.style.top = "2px";
+            var textnode = document.createTextNode(tablee[0]);
+            name.appendChild(textnode);
+            canvas.appendChild(name);
+
+            var photo = document.createElement("IMG"); photo.src = "Game Thumbnails/"+tablee[0]+".jpg"; photo.alt = tablee[0]; photo.style.height = "200px";
+            photo.style.width = "200px"; photo.style.left = "400px"; photo.style.position = "absolute";
+            canvas.appendChild(photo);
+
+            var abbrev = tablee[3];
+            if (abbrev >= 1000){
+                abbrev = (abbrev / 1000)+"B"
+            }else{
+                abbrev = abbrev+"M"
+            }
+            var visitsstats = document.createElement("DIV"); visitsstats.style.position = "absolute"; visitsstats.style.width = "200px"; visitsstats.style.textAlign = "center";
+            visitsstats.style.fontSize = "15px"; visitsstats.style.height = "15px"; visitsstats.style.top = "2px"; visitsstats.style.left = "400px"; visitsstats.style.top = "203px";   
+            var textnode = document.createTextNode("Visits: "+abbrev);
+            visitsstats.appendChild(textnode);
+            canvas.appendChild(visitsstats);
+
+            var abbrev2 = tablee[1]
+            if (abbrev2 >= 1000){
+                abbrev2 = (abbrev2 / 1000)+"M"
+            }else{
+                abbrev2 = abbrev2+"k"
+            }
+            var visitsstats2 = document.createElement("DIV"); visitsstats2.style.position = "absolute"; visitsstats2.style.width = "200px"; visitsstats2.style.textAlign = "center";
+            visitsstats2.style.fontSize = "15px"; visitsstats2.style.height = "15px"; visitsstats2.style.top = "2px"; visitsstats2.style.left = "400px"; visitsstats2.style.top = "220px";   
+            var textnode2 = document.createTextNode("Peak Players: "+abbrev2);
+            visitsstats2.appendChild(textnode2);
+            canvas.appendChild(visitsstats2);
+
+            for (i=0;i<tablee[4].length;i++) {
+            var paragraph = document.createElement("P"); paragraph.style.position = "relative"; paragraph.style.wordWrap = "break-word"; paragraph.style.width = "398px";
+            paragraph.style.top = "15px"; paragraph.style.left = "2px";
+
+            canvas.appendChild(paragraph);
+            paragraph.innerText = tablee[4][i];
+            }
+
+
+
+
+
+        }else{
+            alert("Could not find the game you were looking for. Check to see if you spelled it correctly.");
+        }
+    }
+</script>
